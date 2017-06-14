@@ -22,7 +22,11 @@ public class GuessOppCharTest {
     
     @Before
     public void before() {
+        testArray = game.CHARACTERS;
         compPlayer.setChar(game.CHARACTERS[0]);
+        for (int i = 0; i < testArray.length; i++) {
+            testArray[i] = new Character("", 0, 0);
+        }
     }
     
     @After
@@ -47,7 +51,7 @@ public class GuessOppCharTest {
     */
     @Test
     public void testGuessCharacterCorrectly() throws Exception {
-        game.guessCharacter(humPlayer, game.CHARACTERS[0]);
+        game.guessCharacter(compPlayer, game.CHARACTERS[0]);
         assertEquals(true, game.playerHasWon());
     }
 
@@ -59,8 +63,9 @@ public class GuessOppCharTest {
     */
     @Test
     public void testGuessCharacterIncorrectly() throws Exception {
-        game.guessCharacter(humPlayer, game.CHARACTERS[0]);
-        testArray[0] = null;
+        testArray = compPlayer.getGuessableCharacters();
+        game.guessCharacter(compPlayer, game.CHARACTERS[1]);
+        testArray[1] = null;
         assertArrayEquals(testArray, compPlayer.getGuessableCharacters());
     }
 
@@ -72,7 +77,8 @@ public class GuessOppCharTest {
     */
     @Test
     public void testInquireAttribute() throws Exception {
-        game.askQuestion(humPlayer.getInquiry(0));
+        testArray = compPlayer.getGuessableCharacters();
+        game.askQuestion(compPlayer, humPlayer.getInquiry(0));
         testArray[1] = null;
         testArray[3] = null;
         testArray[11] = null;

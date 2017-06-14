@@ -8,6 +8,11 @@ public class Inquiry {
     private int lookup;
     private String question;
 
+    public Inquiry() {
+        this.lookup = 0;
+        this.question = "";
+    }
+
     public Inquiry(int lookup, String question) {
 
     }

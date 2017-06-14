@@ -9,7 +9,9 @@ public class Character {
     private boolean[][] attributes;
 
     public Character(String name, int type, int value) {
-
+        this.name = name;
+        this.attributes = new boolean[8][8];
+        this.attributes[type][value] = true;
     }
 
     public void setAttributes(int type, int value) {

@@ -10,8 +10,6 @@ package com.example.josh.guesswho;
 import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Assert;
-
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 

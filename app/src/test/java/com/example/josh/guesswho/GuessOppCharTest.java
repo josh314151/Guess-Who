@@ -8,23 +8,28 @@
 
 package com.example.josh.guesswho;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Assert;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class GuessOppCharTest {
     
-    private int[] testArray = new int[24];
+    private Character[] testArray;
     private Player compPlayer = new Player();
     private Player humPlayer = new Player();
     private Game game = new Game();
     
-    @before
+    @Before
     public void before() {
-        compPlayer.setChar("becca");
+        compPlayer.setChar(game.CHARACTERS[0]);
     }
     
-    @after
+    @After
     public void after() {
-        testArray = new int[24];
+        testArray = game.CHARACTERS;
     }
 
     /** Test 1: testAttributeInquiryMatches
@@ -33,7 +38,7 @@ public class GuessOppCharTest {
     */
     @Test
     public void testAttributeInquiryMatches() throws Exception {
-        assertArrayEquals(testArray, game.getOppCharArray());
+        assertEquals(0, (compPlayer.getInquiry(0)).getLookup());
     }
 
     /** Test 2: testGuessCharacterCorrectly
@@ -44,7 +49,7 @@ public class GuessOppCharTest {
     */
     @Test
     public void testGuessCharacterCorrectly() throws Exception {
-        assertArrayEquals(testArray, game.getOppCharArray());
+        assertEquals(true, game.playerHasWon());
     }
 
     /** Test 3: testGuessCharacterIncorrectly
@@ -55,7 +60,9 @@ public class GuessOppCharTest {
     */
     @Test
     public void testGuessCharacterIncorrectly() throws Exception {
-        assertArrayEquals(testArray, game.getOppCharArray());
+        game.guessCharacter(compPlayer, game.CHARACTERS[0]);
+        testArray[0] = null;
+        assertArrayEquals(testArray, compPlayer.getGuessableCharacters());
     }
 
     /** Test 4: testInquireAttribute
@@ -66,7 +73,9 @@ public class GuessOppCharTest {
     */
     @Test
     public void testInquireAttribute() throws Exception {
-        assertArrayEquals(testArray, game.getOppCharArray());
+        game.askQuestion(compPlayer, compPlayer.getInquiry(0));
+        testArray[0] = null;
+        assertArrayEquals(testArray, compPlayer.getGuessableCharacters());
     }
 
     /** Test 5: testWinIfOneRemaining
@@ -76,6 +85,6 @@ public class GuessOppCharTest {
     */
     @Test
     public void testWinIfOneRemaining() throws Exception {
-        assertEquals(True, game.humHasWon());
+        assertEquals(true, game.playerHasWon());
     }
 }

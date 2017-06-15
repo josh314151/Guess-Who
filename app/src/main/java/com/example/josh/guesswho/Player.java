@@ -13,13 +13,7 @@ public class Player {
     public Player() {
         this.isAI = true;
         this.askableQuestions = Game.INQUIRIES;
-        for (int i = 0; i < askableQuestions.length; i++) {
-            askableQuestions[i] = new Inquiry();
-        }
-        guessableCharacters = new Character[24];
-        for (int i = 0; i < guessableCharacters.length; i++) {
-            guessableCharacters[i] = new Character("", 0, 0, 0, 0, 0, 0, 0, 0);
-        }
+        guessableCharacters = Game.CHARACTERS;
     }
 
     public void setAI(boolean b) {

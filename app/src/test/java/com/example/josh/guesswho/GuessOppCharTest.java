@@ -25,7 +25,7 @@ public class GuessOppCharTest {
         testArray = game.CHARACTERS;
         compPlayer.setChar(game.CHARACTERS[0]);
         for (int i = 0; i < testArray.length; i++) {
-            testArray[i] = new Character("", 0, 0, 0, 0, 0, 0, 0, 0);
+            testArray[i] = new Character("", 0, 0, 0, 0, 0, 0, 0);
         }
     }
     

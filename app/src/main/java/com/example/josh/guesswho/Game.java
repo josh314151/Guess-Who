@@ -5,21 +5,19 @@ package com.example.josh.guesswho;
  */
 
 public class Game {
-    public static final Inquiry[] INQUIRIES = new Inquiry[24];
-    public static final Character[] CHARACTERS = new Character[24];
+    public static final Inquiry[] INQUIRIES = {new Inquiry(0, "Does your character have blond hair?")};
+    public static final Character[] CHARACTERS = {new Character("alyssa", 0, 0, 0, 0, 0, 0, 0, 0), new Character("becca", 0, 0, 0, 0, 0, 0, 0, 0), new Character("darrell", 0, 0, 0, 0, 0, 0, 0, 0), new Character("dennis", 0, 0, 0, 0, 0, 0, 0, 0), new Character("erica", 0, 0, 0, 0, 0, 0, 0, 0), new Character("fabio", 0, 0, 0, 0, 0, 0, 0, 0), new Character("gary", 0, 0, 0, 0, 0, 0, 0, 0), new Character("gianna", 0, 0, 0, 0, 0, 0, 0, 0), new Character("guy", 0, 0, 0, 0, 0, 0, 0, 0), new Character("jeff", 0, 0, 0, 0, 0, 0, 0, 0), new Character("jill", 0, 0, 0, 0, 0, 0, 0, 0), new Character("julie", 0, 0, 0, 0, 0, 0, 0, 0), new Character("katie", 0, 0, 0, 0, 0, 0, 0, 0), new Character("lee", 0, 0, 0, 0, 0, 0, 0, 0), new Character("madison", 0, 0, 0, 0, 0, 0, 0, 0), new Character("makenzie", 0, 0, 0, 0, 0, 0, 0, 0), new Character("michael", 0, 0, 0, 0, 0, 0, 0, 0), new Character("michelle", 0, 0, 0, 0, 0, 0, 0, 0), new Character("phil", 0, 0, 0, 0, 0, 0, 0, 0), new Character("stacey", 0, 0, 0, 0, 0, 0, 0, 0), new Character("tia", 0, 0, 0, 0, 0, 0, 0, 0), new Character("tony", 0, 0, 0, 0, 0, 0, 0, 0), new Character("wayne", 0, 0, 0, 0, 0, 0, 0, 0), new Character("zano", 0, 0, 0, 0, 0, 0, 0, 0)};
     private Player player1;
     private Player player2;
 
     public Game() {
-        for (int i = 0; i < INQUIRIES.length; i++) {
-            INQUIRIES[i] = new Inquiry();
-        }
-        for (int i = 0; i < CHARACTERS.length; i++) {
-            CHARACTERS[i] = new Character("", 0, 0);
-        }
+
     }
     public void turnStart(Player player) {
-
+        if (player.isAI())
+            this.compTurn(player);
+        else
+            this.humanTurn(player);
     }
 
     public void compTurn(Player player) {

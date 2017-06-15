@@ -11,18 +11,23 @@ public class Player {
     private Inquiry[] askableQuestions;
 
     public Player() {
+        this.isAI = true;
         this.askableQuestions = Game.INQUIRIES;
         for (int i = 0; i < askableQuestions.length; i++) {
             askableQuestions[i] = new Inquiry();
         }
         guessableCharacters = new Character[24];
         for (int i = 0; i < guessableCharacters.length; i++) {
-            guessableCharacters[i] = new Character("", 0, 0);
+            guessableCharacters[i] = new Character("", 0, 0, 0, 0, 0, 0, 0, 0);
         }
     }
 
-    public void setChar(Character chosenChar) {
+    public void setAI(boolean b) {
+        this.isAI = b;
+    }
 
+    public void setChar(Character chosenChar) {
+        this.chosenChar = chosenChar;
     }
 
     public void setGuessableCharacters(int i, Character character) {
@@ -30,7 +35,7 @@ public class Player {
     }
 
     public Inquiry getInquiry(int lookup) {
-        return askableQuestions[0];
+        return askableQuestions[lookup];
     }
 
     public Inquiry[] getAskableQuestions() {

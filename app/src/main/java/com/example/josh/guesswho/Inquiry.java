@@ -14,15 +14,16 @@ public class Inquiry {
     }
 
     public Inquiry(int lookup, String question) {
-
+        this.lookup = lookup;
+        this.question = question;
     }
 
     public void setLookup(int i) {
-
+        this.lookup = i;
     }
 
     public void setQuestion(String s) {
-
+        this.question = s;
     }
 
     public int getLookup() {

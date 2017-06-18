@@ -1,5 +1,7 @@
 package com.example.josh.guesswho;
 
+import java.util.Random;
+
 /**
  * Created by Josh on 2017-06-13.
  */
@@ -15,50 +17,61 @@ public class Game {
     private Player player2;
 
     /** Constructor for the game */
-    /** Not needed for testing */
-    public Game() {
-
+    public Game(Character character) {
+        player1 = new Player();
+        player2 = new Player();
+        player1.setChar(character);
+        player1.setAI(false);
+        Random rand = new Random();
+        player2.setChar(Game.CHARACTERS[rand.nextInt(24)]);
+        int firstTurn = rand.nextInt(2);
+        if(firstTurn == 0)
+            this.turnStart(player1, player2);
+        else
+            this.turnStart(player2, player1);
     }
 
     /** Starts each player's turn */
-    /** Not needed for testing */
-    public void turnStart(Player player) {
-        if (player.isAI())
-            this.compTurn(player);
+    public void turnStart(Player currPlayer, Player oppPlayer) {
+        if (currPlayer.isAI())
+            this.compTurn(currPlayer, oppPlayer);
         else
-            this.humanTurn(player);
+            this.humanTurn(currPlayer, oppPlayer);
     }
 
     /** set of actions that occur during an AI's turn */
-    /** Not needed for testing */
-    public void compTurn(Player player) {
+    public void compTurn(Player currPlayer, Player oppPlayer) {
+        Random rand = new Random();
+        int action = rand.nextInt(2);
+        if (action == 0) {
+            this.askQuestion(currPlayer, oppPlayer, currPlayer.getInquiry(rand.nextInt(currPlayer.getAskableQuestions().length)));
+        } else {
+            this.guessCharacter(currPlayer, oppPlayer, oppPlayer.getGuessableCharacters()[rand.nextInt(oppPlayer.getGuessableCharacters().length)]);
+        }
+        if (playerHasWon(currPlayer, oppPlayer)) {
 
+        } else {
+            turnStart(oppPlayer, currPlayer);
+        }
     }
 
     /** set of actions that occur during during a human's turn */
-    /** Not needed for testing */
-    public void humanTurn(Player player) {
+    public void humanTurn(Player currPlayer, Player oppPlayer) {
 
     }
 
     /** set of actions that occur when a question has been asked */
-    //TODO implement an appropriate set of actions based on inquiry and opponent's chosen character
-    public void askQuestion(Player player, Inquiry inquiry) {
-        player.setGuessableCharacters(1, null);
-        player.setGuessableCharacters(3, null);
-        player.setGuessableCharacters(11, null);
-        player.setGuessableCharacters(21, null);
+    public void askQuestion(Player currPlayer, Player oppPlayer, Inquiry inquiry) {
+
     }
 
     /** set of actions that occur when a player guesses a character */
-    //TODO detect if guess is correct and perform appropriate actions
-    public void guessCharacter(Player player, Character character) {
-        player.setGuessableCharacters(1, null);
+    public void guessCharacter(Player currPlayer, Player oppPlayer, Character character) {
+
     }
 
     /** detects if the current player has won */
-    //TODO detect win conditions
-    public boolean playerHasWon() {
-        return true;
+    public boolean playerHasWon(Player currPlayer, Player oppPlayer) {
+        return false;
     }
 }

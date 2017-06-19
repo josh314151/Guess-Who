@@ -5,20 +5,15 @@ package com.example.josh.guesswho;
  */
 
 public class Player {
-    private boolean isAI;
     private Character chosenChar;
     private Character[] guessableCharacters;
     private Inquiry[] askableQuestions;
 
     public Player() {
-        this.isAI = true;
         this.askableQuestions = Game.INQUIRIES;
         guessableCharacters = Game.CHARACTERS;
     }
 
-    public void setAI(boolean b) {
-        this.isAI = b;
-    }
 
     public void setChar(Character chosenChar) {
         this.chosenChar = chosenChar;
@@ -42,9 +37,5 @@ public class Player {
 
     public Character[] getGuessableCharacters() {
         return guessableCharacters;
-    }
-
-    public boolean isAI() {
-        return isAI;
     }
 }

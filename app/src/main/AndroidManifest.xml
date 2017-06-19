@@ -20,7 +20,11 @@
         </activity>
         <activity
             android:name=".CharacterSelectionActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".YourTurnActivity"
             android:screenOrientation="landscape"></activity>
+        <activity android:name=".OppTurnActivity"></activity>
     </application>
 
 </manifest>

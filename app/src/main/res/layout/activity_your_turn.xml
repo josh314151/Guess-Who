@@ -5,39 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.example.josh.guesswho.CharacterSelectionActivity">
+    tools:context="com.example.josh.guesswho.YourTurnActivity">
 
     <TextView
-        android:id="@+id/selectCharacterTextView"
-        android:layout_width="179dp"
-        android:layout_height="35dp"
+        android:id="@+id/textView"
+        android:layout_width="93dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="16dp"
-        android:text="@string/select_character"
+        android:text="Your Turn"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="250dp" />
 
     <Button
-        android:id="@+id/okayButton"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="252dp"
-        android:layout_marginStart="235dp"
-        android:layout_marginTop="295dp"
-        android:onClick="clickOkay"
-        android:text="@string/okay"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded" />
+        android:id="@+id/askQuestionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginStart="162dp"
+        android:onClick="askQuestion"
+        android:text="Ask Question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/guessCharacterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginRight="161dp"
+        android:onClick="guessCharacter"
+        android:text="Guess Character"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <HorizontalScrollView
         android:layout_width="568dp"
         android:layout_height="287dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -45,202 +58,175 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#ffffff"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="7dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:orientation="horizontal" >
 
-            <ImageButton
-                android:id="@+id/alyssaButton"
+            <ImageView
+                android:id="@+id/alyssa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription=""
-                android:onClick="characterSelect1"
                 app:srcCompat="@drawable/alyssa_red" />
 
-            <ImageButton
-                android:id="@+id/beccaButton"
+            <ImageView
+                android:id="@+id/becca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="characterSelect2"
                 app:srcCompat="@drawable/becca_red" />
 
-            <ImageButton
-                android:id="@+id/darrellButton"
+            <ImageView
+                android:id="@+id/darrell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect3"
                 app:srcCompat="@drawable/darrell_red" />
 
-            <ImageButton
-                android:id="@+id/denisButton"
+            <ImageView
+                android:id="@+id/denis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect4"
                 app:srcCompat="@drawable/denis_red" />
 
-            <ImageButton
-                android:id="@+id/ericaButton"
+            <ImageView
+                android:id="@+id/erica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect5"
                 app:srcCompat="@drawable/erica_red" />
 
-            <ImageButton
-                android:id="@+id/fabioButton"
+            <ImageView
+                android:id="@+id/fabio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect6"
                 app:srcCompat="@drawable/fabio_red" />
 
-            <ImageButton
-                android:id="@+id/garyButton"
+            <ImageView
+                android:id="@+id/gary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect7"
                 app:srcCompat="@drawable/gary_red" />
 
-            <ImageButton
-                android:id="@+id/giannaButton"
+            <ImageView
+                android:id="@+id/gianna"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect8"
                 app:srcCompat="@drawable/gianna_red" />
 
-            <ImageButton
-                android:id="@+id/guyButton"
+            <ImageView
+                android:id="@+id/guy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect9"
                 app:srcCompat="@drawable/guy_red" />
 
-            <ImageButton
-                android:id="@+id/jeffButton"
+            <ImageView
+                android:id="@+id/jeff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect10"
                 app:srcCompat="@drawable/jeff_red" />
 
-            <ImageButton
-                android:id="@+id/jillButton"
+            <ImageView
+                android:id="@+id/jill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect11"
                 app:srcCompat="@drawable/jill_red" />
 
-            <ImageButton
-                android:id="@+id/julieButton"
+            <ImageView
+                android:id="@+id/julie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect12"
                 app:srcCompat="@drawable/julie_red" />
 
-            <ImageButton
-                android:id="@+id/katieButton"
+            <ImageView
+                android:id="@+id/katie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect13"
                 app:srcCompat="@drawable/katie_red" />
 
-            <ImageButton
-                android:id="@+id/leeButton"
+            <ImageView
+                android:id="@+id/lee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect14"
                 app:srcCompat="@drawable/lee_red" />
 
-            <ImageButton
-                android:id="@+id/madisonButton"
+            <ImageView
+                android:id="@+id/madison"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect15"
                 app:srcCompat="@drawable/madison_red" />
 
-            <ImageButton
-                android:id="@+id/makenzieButton"
+            <ImageView
+                android:id="@+id/makenzie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect16"
                 app:srcCompat="@drawable/makenzie_red" />
 
-            <ImageButton
-                android:id="@+id/michaelButton"
+            <ImageView
+                android:id="@+id/michael"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect17"
                 app:srcCompat="@drawable/michael_red" />
 
-            <ImageButton
-                android:id="@+id/michelleButton"
+            <ImageView
+                android:id="@+id/michelle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect18"
                 app:srcCompat="@drawable/michelle_red" />
 
-            <ImageButton
-                android:id="@+id/philButton"
+            <ImageView
+                android:id="@+id/phil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect19"
                 app:srcCompat="@drawable/phil_red" />
 
-            <ImageButton
-                android:id="@+id/staceyButton"
+            <ImageView
+                android:id="@+id/stacey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect20"
                 app:srcCompat="@drawable/stacey_red" />
 
-            <ImageButton
-                android:id="@+id/tiaButton"
+            <ImageView
+                android:id="@+id/tia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect21"
                 app:srcCompat="@drawable/tia_red" />
 
-            <ImageButton
-                android:id="@+id/tonyButton"
+            <ImageView
+                android:id="@+id/tony"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect22"
                 app:srcCompat="@drawable/tony_red" />
 
-            <ImageButton
-                android:id="@+id/wayneButton"
+            <ImageView
+                android:id="@+id/wayne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect23"
                 app:srcCompat="@drawable/wayne_red" />
 
-            <ImageButton
-                android:id="@+id/zanoButton"
+            <ImageView
+                android:id="@+id/zano"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="characterSelect24"
                 app:srcCompat="@drawable/zano_red" />
         </LinearLayout>
     </HorizontalScrollView>
-
 </android.support.constraint.ConstraintLayout>

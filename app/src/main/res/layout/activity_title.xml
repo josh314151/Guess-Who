@@ -22,10 +22,10 @@
         android:layout_width="346dp"
         android:layout_height="270dp"
         app:srcCompat="@drawable/sport_red"
-        android:layout_marginLeft="62dp"
+        android:layout_marginLeft="68dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="4dp" />
+        android:layout_marginBottom="0dp" />
 
     <Button
         android:id="@+id/play_button"

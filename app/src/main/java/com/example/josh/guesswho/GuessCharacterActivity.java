@@ -111,6 +111,6 @@ public class GuessCharacterActivity extends AppCompatActivity {
     }
 
     public void clickOkay(View v) {
-        
+
     }
 }

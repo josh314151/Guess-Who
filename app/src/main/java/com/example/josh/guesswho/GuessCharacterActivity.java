@@ -1,5 +1,7 @@
 package com.example.josh.guesswho;
 
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,7 @@ public class GuessCharacterActivity extends AppCompatActivity {
 
     public static Character selectedCharacter;
 
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +114,9 @@ public class GuessCharacterActivity extends AppCompatActivity {
     }
 
     public void clickOkay(View v) {
+
+        mp = MediaPlayer.create(GuessCharacterActivity.this, R.raw.beep);
+        mp.start();
 
     }
 }

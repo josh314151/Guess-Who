@@ -9,6 +9,18 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".TitleActivity"
             android:screenOrientation="landscape">
@@ -26,7 +38,7 @@
             android:screenOrientation="landscape" />
         <activity android:name=".OppTurnActivity" />
         <activity android:name=".AskQuestionActivity" />
-        <activity android:name=".GuessCharacterActivity"></activity>
+        <activity android:name=".GuessCharacterActivity" />
     </application>
 
 </manifest>

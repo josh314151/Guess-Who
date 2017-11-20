@@ -5,4 +5,5 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="okay">Okay</string>
     <string name="select_character">Select Character</string>
+    <string name="title_activity_title_music_player">TitleMusicPlayer</string>
 </resources>

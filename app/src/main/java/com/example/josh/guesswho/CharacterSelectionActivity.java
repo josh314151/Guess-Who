@@ -1,6 +1,7 @@
 package com.example.josh.guesswho;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,15 @@ import android.view.View;
 public class CharacterSelectionActivity extends AppCompatActivity {
     public static Character selectedCharacter;
 
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_selection);
+
+        mp = MediaPlayer.create(CharacterSelectionActivity.this, R.raw.gamemusic);
+        mp.start();
     }
 
     public void characterSelect1(View v) {
@@ -114,6 +120,9 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         if (selectedCharacter != null) {
             Intent intent = new Intent(this, YourTurnActivity.class);
             startActivity(intent);
+
+            mp = MediaPlayer.create(CharacterSelectionActivity.this, R.raw.beep);
+            mp.start();
         }
     }
 }
